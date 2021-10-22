@@ -1,0 +1,14 @@
+[Unit]
+Description=Mqtt sub
+After=network.target
+Wants=mosquitto@.service
+ 
+[Service]
+Type=simple
+ 
+ExecStart=/home/pi/venv/bin/python /home/pi/mqtt_sub.py
+ 
+Restart=on-failure
+ 
+# Configures the time to wait before service is stopped forcefully.
+TimeoutStopSec=300
